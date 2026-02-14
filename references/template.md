@@ -31,7 +31,7 @@ For skills with multiple functions, declare each as a separate transformation:
 
 ## Examples
 
-### Happy path
+### Expected behavior
 
 Scenario: User asks to [typical request].
 
