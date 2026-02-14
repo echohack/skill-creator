@@ -153,7 +153,7 @@ Acceptance criteria:
 
 ### Case Arrows
 
-Declare edge cases and failure modes with arrow (`->`) format. Edge cases first, happy path last:
+Declare edge cases and failure modes with arrow (`->`) format. Edge cases first, expected behavior last:
 
 ```
 case input:
@@ -217,7 +217,7 @@ Request user input when the skill needs their assets, documentation, or domain k
 3. Update SKILL.md or bundled resources
 4. Test again
 
-Use case arrows to build a test plan. Verify edge cases first, happy path last.
+Use case arrows to build a test plan. Verify edge cases first, expected behavior last.
 
 ## Anti-patterns
 

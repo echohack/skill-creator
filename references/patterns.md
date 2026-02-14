@@ -146,7 +146,7 @@ Acceptance criteria:
 
 ## Case Arrows
 
-Use case arrow (`->`) format to declare edge cases and failure modes alongside the happy path. Borrowed from Elixir's `case` pattern matching: edge cases first, happy path last.
+Use case arrow (`->`) format to declare edge cases and failure modes alongside the expected behavior. Borrowed from Elixir's `case` pattern matching: edge cases first, expected behavior last.
 
 ### When to use arrows vs bullets
 
@@ -181,7 +181,7 @@ case changelog input:
   valid bug fix           -> generate entry per acceptance criteria
 ```
 
-**Key principle:** Edge cases first, happy path last. New cases slot in naturally — the format gives them a place to go.
+**Key principle:** Edge cases first, expected behavior last. New cases slot in naturally — the format gives them a place to go.
 
 ## Skill Stacking
 
