@@ -133,6 +133,24 @@ Match specificity to fragility:
 
 Define success through concrete examples with testable acceptance criteria. Structure: **Scenario** (input) -> **Expected output** -> **Acceptance criteria** (pass/fail conditions).
 
+**Example — Changelog skill:**
+
+Scenario: User asks to generate a changelog entry for a bug fix.
+
+Expected output:
+```
+## [1.2.1] - 2025-03-15
+### Fixed
+- Resolved timeout error when uploading files >50MB (#423)
+```
+
+Acceptance criteria:
+- Follows [Keep a Changelog](https://keepachangelog.com) format
+- Version uses semantic versioning
+- Change categorized correctly (Added, Fixed, Changed, etc.)
+- References issue/PR number when available
+- Date in ISO 8601 format (YYYY-MM-DD)
+
 ### Case Arrows
 
 Declare edge cases and failure modes with arrow (`->`) format. Edge cases first, happy path last:
