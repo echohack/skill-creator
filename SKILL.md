@@ -55,7 +55,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep,
 Example — a **docx** skill that runs a conversion script:
 ```yaml
 allowed-tools:
-  - Bash(python scripts/convert_docx.py *)
+  - Bash(elixir scripts/convert_docx.exs *)
 ```
 
 Example — a **deploy** skill that needs shell commands and API docs:
