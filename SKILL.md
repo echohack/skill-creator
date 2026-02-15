@@ -35,13 +35,37 @@ The `description` is the primary trigger mechanism. Include all "when to use" la
 
 `allowed-tools` grants tool permissions when the skill is active. Each entry is a tool name with an optional argument pattern. Use when the skill requires specific tool access (shell commands, web fetches, MCP tools) to function.
 
-Example for a `docx` skill:
+Formats:
+- **Bare tool name:** `Read`, `Write`, `Edit` — grants full access to that tool
+- **With argument pattern:** `Bash(npm run build)` — grants access only for matching invocations
+- **Wildcard patterns:** `WebFetch(docs.example.com/*)` — matches any path under that domain
+- **Comma-separated list:** `Read, Write, Edit, Glob` — multiple tools on one line
+- **MCP tools:** `mcp__server__tool_name` — grants access to specific MCP server tools
+
+Example — a **knowledge vault** skill that searches, captures, and archives via browser:
 ```yaml
-description: Document creation, editing, and analysis with tracked changes,
-  comments, and formatting. Use when working with .docx files for creating,
-  modifying, or reviewing professional documents.
+allowed-tools: Read, Write, Edit, Glob, Grep,
+  mcp__qmd__search, mcp__qmd__vsearch, mcp__qmd__query, mcp__qmd__get,
+  AskUserQuestion, WebFetch,
+  mcp__claude-in-chrome__tabs_context_mcp, mcp__claude-in-chrome__tabs_create_mcp,
+  mcp__claude-in-chrome__navigate, mcp__claude-in-chrome__get_page_text,
+  mcp__claude-in-chrome__computer
+```
+
+Example — a **docx** skill that runs a conversion script:
+```yaml
 allowed-tools:
   - Bash(python scripts/convert_docx.py *)
+```
+
+Example — a **deploy** skill that needs shell commands and API docs:
+```yaml
+allowed-tools:
+  - Bash(railway *)
+  - Bash(docker *)
+  - WebFetch(docs.railway.com/*)
+  - Read
+  - Glob
 ```
 
 ### Bundled Resources
