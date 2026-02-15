@@ -1,13 +1,13 @@
 ---
-name: skill-creator
+name: skill-builder
 description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
 ---
 
-# Skill Creator
+# Skill Builder
 
 Create and iterate on skills — modular packages that extend Claude with specialized knowledge, workflows, and tools.
 
-Install: `npx skills add echohack/skill-creator`
+Install: `npx skills add echohack/skill-builder`
 
 ## Skill Structure
 
