@@ -77,30 +77,27 @@ The context window is a public good. Every line in a skill competes with system 
 - Only add context Claude doesn't already have
 - Challenge each paragraph: does it justify its token cost?
 
-### Before / After
+### Use Declarative instead of Procedural
 
-**Before** (verbose):
+**Pattern** (declarative):
 ```markdown
-## Working with PDFs
+## Changelog Generation
 
-When you need to extract text from a PDF file, you can use the pdfplumber
-library. This library is particularly well-suited for this task because it
-handles complex layouts and maintains the reading order of text elements.
-To get started, you'll want to install it first and then use the following
-approach to open and extract text from your PDF files.
+input: git commit range (defaults to last tag..HEAD)
+output: changelog entry prepended to CHANGELOG.md
+
+Format: [Keep a Changelog](https://keepachangelog.com). Group commits by
+conventional commit type. Use today's date and the next semantic version.
 ```
 
-**After** (imperative):
+**Anti-pattern** (procedural):
 ```markdown
-## PDF Text Extraction
+## Generating a Changelog
 
-Extract text with pdfplumber:
-\```python
-import pdfplumber
-with pdfplumber.open(path) as pdf:
-    text = "\n".join(p.extract_text() for p in pdf.pages)
-\```
-For complex layouts, see [references/pdf-advanced.md](references/pdf-advanced.md).
+1. First, run `git log` to get the commits since the last tag
+2. Then, group the commits by type (feat, fix, chore)
+3. Next, format each group as a markdown section
+4. Finally, prepend the new entry to CHANGELOG.md with today's date
 ```
 
 ## Design Patterns
