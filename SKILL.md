@@ -7,6 +7,8 @@ description: Guide for creating effective skills. This skill should be used when
 
 Create and iterate on skills — modular packages that extend Claude with specialized knowledge, workflows, and tools.
 
+Install: `npx skills add echohack/skill-creator`
+
 ## Skill Structure
 
 ```
