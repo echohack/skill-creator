@@ -61,9 +61,9 @@ allowed-tools:
 Example — a **deploy** skill that needs shell commands and API docs:
 ```yaml
 allowed-tools:
-  - Bash(railway *)
   - Bash(docker *)
-  - WebFetch(docs.railway.com/*)
+  - Bash(kubectl *)
+  - WebFetch(docs.example.com/*)
   - Read
   - Glob
 ```
