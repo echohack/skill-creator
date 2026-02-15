@@ -162,6 +162,30 @@ case input:
 
 Use arrows for branching logic, bullets for output quality within each branch.
 
+### Functional Decomposition
+
+Declare each behavior as a small, independent transformation. Compose them to build complex functionality.
+
+**Pattern** (decomposed):
+```markdown
+## Document Processing
+
+- **extract**: PDF path -> raw text
+- **normalize**: raw text -> cleaned text (trim, collapse whitespace, fix encoding)
+- **classify**: cleaned text -> document type (invoice, contract, receipt)
+- **summarize**: cleaned text + document type -> structured summary
+```
+
+**Anti-pattern** (monolithic):
+```markdown
+## Document Processing
+
+Take a PDF, extract its text, clean it up, figure out what kind of document
+it is, and produce a summary.
+```
+
+Each transformation is testable on its own, reusable across workflows, and can be given its own degree of freedom. When a skill has multiple behaviors, decompose them — don't describe them as one blob.
+
 ### Skill Stacking
 
 Each skill owns a specific domain. When a domain grows too large, split it into focused skills that compose together:
